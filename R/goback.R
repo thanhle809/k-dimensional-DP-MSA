@@ -2,7 +2,6 @@
 # and gap indices and return the cell to trace back to
 
 goback <- function(id, gapindices) {
-
   current <- unlist(str_split(id, pattern = "-"))
 
   nogap <- as.numeric(current) - 1
