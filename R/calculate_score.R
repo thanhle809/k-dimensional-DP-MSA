@@ -1,6 +1,11 @@
-# This function takes in the id of current cell, list of possible predecessor cells,
-# list of sequence (as character strings), and score matrix. Then, it returns a hash
-# table with keys being the predecessor, and value being their sscore.
+#' @title Calculate the sscore for possible predecessors.
+#' @description the function returns a hash table of the pair predecessor - sscore
+#' @param current id of the current cell
+#' @param predecessoridlist list of the id of the possible predecessors
+#' @param listofseq list of sequence strings
+#' @param scoremat matrix of substitution score
+#' @return a hash table of the predecessor - sscore
+#' @examples
 
 calculate.score <- function(current, predecessoridlist, listofseq, scoremat) {
   # process id of current and predecessors
