@@ -5,7 +5,6 @@
 #' @param listofseq list of sequence strings
 #' @param scoremat matrix of substitution score
 #' @return a hash table of the predecessor - sscore
-#' @examples
 
 calculate.score <- function(current, predecessoridlist, listofseq, scoremat) {
   # process id of current and predecessors

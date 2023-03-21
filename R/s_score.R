@@ -1,5 +1,8 @@
-# s.score: the function that takes in a vector of all residues in a column
-# and calculate their average match score
+#' @title Calculate the sscore of a column in the MSA table
+#' @param scoremat scoring matrix
+#' @param gappen vector of gap penalties
+#' @param resvec list of residues in that column
+#' @return sscore
 s.score <- function(scoremat, resvec, gappen) {
   scorelist <- c()
   score <- 0

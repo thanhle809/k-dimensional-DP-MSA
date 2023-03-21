@@ -1,4 +1,5 @@
-# a function that writes the script after accepting the name of the fasta file containing the sequence
+#' @title Write the command to integrate all functions
+#' @description writes the script after accepting the name of the fasta file containing the sequence
 
 write.command <- function() {
   require(stringr)

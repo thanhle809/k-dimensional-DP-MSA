@@ -1,9 +1,9 @@
-# This function takes in the current id and the list of predecessors with their s.score
-# , get the max score, and update the score in the main hashtable
+#' @title update the score of a cell
+#' @param current current cell id whose score needs to be filled
+#' @param dict hashtable containing cellid-score, to retrieve Fscore
+#' @param dict.pred hashtable containing cellid-predecessor
+#' @param sscoretab hashtable of predecessor-sscore
 
-# retrive Fscore of predecessor
-# sum Fscore and sscore
-# go to current cell and update with the max
 update.score <- function(current, dict, dict.pred, sscoretab) {
   # first cell
   noofseq <- length(unlist(str_split(current, pattern = "-")))

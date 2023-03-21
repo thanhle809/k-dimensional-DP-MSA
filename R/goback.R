@@ -1,5 +1,6 @@
-# goback: this functions takes in the id of the cell we're trying to score (current cell)
-# and gap indices and return the cell to trace back to
+#' @title Find the cell to trace back to
+#' @param id current cell id
+#' @param gapindices gap indices
 
 goback <- function(id, gapindices) {
   current <- unlist(str_split(id, pattern = "-"))

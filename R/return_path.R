@@ -1,5 +1,7 @@
-# this function traces back the dict.pred to generate the MSA visualiztion
-# dict.pred is a hashtable with keys being the cells and values being the predecessor
+#' @title Generate trace back path for MSA visualization
+#' @param dict.pred a hash table of cellid:predecessor
+#' @return path
+
 returnPath <- function(dict.pred) {
   dict.pred <- hash.astable(dict.pred) %>%
     arrange(., desc(keys))

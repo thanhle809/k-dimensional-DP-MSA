@@ -1,4 +1,6 @@
-# function to display hashtable as a table
+#'@title display hash table as a dataframe
+#'@param hashtable a hash table as a result from hashtab function
+
 
 hash.astable <- function(hashtable) {
   keys <- hashkeys(hashtable)

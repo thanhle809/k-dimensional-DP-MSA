@@ -1,4 +1,7 @@
-# initiate.score: generate the scores for the boxes along the axes
+#' @title Generate the scores along the axes
+#' @param dict hashtable of cell id and score
+#' @param listofseqlength vector of sequence length
+
 initiate.score <- function(dict, listofseqlength) {
   noofseq <- length(listofseqlength)
   for (i in sequence(noofseq)) {

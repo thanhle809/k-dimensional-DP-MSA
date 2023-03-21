@@ -1,3 +1,6 @@
+#' @title Read fasta file into table of seqname and sequences
+#' @param filename name of the fasta file
+
 read.fasta <- function(filename) {
   lines <- readLines(con = filename)
   namebag <- c()
