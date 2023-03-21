@@ -1,6 +1,7 @@
 #' @title Find the cell to trace back to
 #' @param id current cell id
 #' @param gapindices gap indices
+#' @import dplyr
 
 goback <- function(id, gapindices) {
   current <- unlist(str_split(id, pattern = "-"))

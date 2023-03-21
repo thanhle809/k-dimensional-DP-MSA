@@ -1,5 +1,6 @@
 #' @title Write the command to integrate all functions
 #' @description writes the script after accepting the name of the fasta file containing the sequence
+#' @import stringr
 
 write.command <- function() {
   require(stringr)

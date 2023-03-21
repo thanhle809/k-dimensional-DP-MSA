@@ -1,5 +1,6 @@
 #' @title Generate trace back path for MSA visualization
 #' @param dict.pred a hash table of cellid:predecessor
+#' @import dplyr
 #' @return path
 
 returnPath <- function(dict.pred) {
