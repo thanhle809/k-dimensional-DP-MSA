@@ -2,7 +2,7 @@ Package: AlignDP
 Title: Sequence Alignment using Dynamic Programing
 Version: 0.0.0.9000
 Authors@R: 
-    person("Thanh", "Le", email = "thanhmle809@gmail.com", role = c("aut,"cre"))
+    person("Thanh", "Le", email = "thanhmle809@gmail.com", role = c("aut","cre"))
 Description: AlignDP contains functions aid in the dynamic programming-based alignment of biological sequences.
 License: `use_mit_license()`
 Encoding: UTF-8
