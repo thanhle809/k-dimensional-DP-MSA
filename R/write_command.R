@@ -1,10 +1,11 @@
 #' @title Write the command to integrate all functions
 #' @description writes the script after accepting the name of the fasta file containing the sequence
 #' @import stringr
+#' @export
 
 write.command <- function() {
-  require(stringr)
   filename <- readline(prompt = "Enter the fasta file name: ")
+  scoremat <- readline(prompt = "Enter the scoring matrix name: ")
   seqtable <- read.fasta(filename)
   listofseq <- seqtable$sequence
   noofseqlength <- return.seqlengths(seqtable)
@@ -12,12 +13,12 @@ write.command <- function() {
 
   seqchar <- paste0("'", listofseq, "'")
 
-  write(x = paste0("listofseq <- c(", paste0(seqchar, collapse = ", "), ")"), file = "script.R", append = T)
-  write(x = paste0("noofseqlength <- c(", paste0(noofseqlength, collapse = ", "), ")"), file = "script.R", append = T)
-  write(x = paste0("numofseq <- ", numofseq), file = "script.R", append = T)
-  write(x = paste0("dict <- build.dict(generate.id(noofseqlength))"), file = "script.R", append = T)
-  write(x = paste0("dict.pred <- build.dict(generate.id(noofseqlength))"), file = "script.R", append = T)
-  write(x = paste0("dict <- initiate.score(dict, noofseqlength)"), file = "script.R", append = T)
+  write(x = paste0("listofseq <- c(", paste0(seqchar, collapse = ", "), ")"), file = "R/script.R", append = T)
+  write(x = paste0("noofseqlength <- c(", paste0(noofseqlength, collapse = ", "), ")"), file = "R/script.R", append = T)
+  write(x = paste0("numofseq <- ", numofseq), file = "R/script.R", append = T)
+  write(x = paste0("dict <- build.dict(generate.id(noofseqlength))"), file = "R/script.R", append = T)
+  write(x = paste0("dict.pred <- build.dict(generate.id(noofseqlength))"), file = "R/script.R", append = T)
+  write(x = paste0("dict <- initiate.score(dict, noofseqlength)"), file = "R/script.R", append = T)
 
 
   characterset <- c()
@@ -41,7 +42,7 @@ write.command <- function() {
       text <- paste0(
         text,
         "\n", strrep("\t", seqindex + 1),
-        "sscoretab <- calculate.score(currentid, predecessor, listofseq, BLOSUM62)"
+        "sscoretab <- calculate.score(currentid, predecessor, listofseq, '", scoremat,"')"
       )
       # update the score in the table
       text <- paste0(
@@ -67,17 +68,17 @@ write.command <- function() {
   for (i in sequence(numofseq)) {
     write(
       x = content(i, numofseq),
-      file = "script.R",
+      file = "R/script.R",
       append = TRUE
     )
   }
 
   write(
     x = strrep("}", times = numofseq),
-    file = "script.R",
+    file = "R/script.R",
     append = TRUE
   )
 
-  write(x = "path <- returnPath(dict.pred)", file = "script.R", append = T)
-  write(x = "msa <- getMSA(path, listofseq)", file = "script.R", append = T)
+  write(x = "path <- returnPath(dict.pred)", file = "R/script.R", append = T)
+  write(x = "msa <- getMSA(path, listofseq)", file = "R/script.R", append = T)
 }
