@@ -1,17 +1,19 @@
 Package: AlignDP
-Title: Sequence Alignment using Dynamic Programing
+Title: Sequence Alignment Using Dynamic Programing
 Version: 0.0.0.9000
 Authors@R: 
     person("Thanh", "Le", email = "thanhmle809@gmail.com", role = c("aut","cre"))
 Description: AlignDP contains functions aid in the dynamic programming-based alignment of biological sequences.
-License: `use_mit_license()`
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Imports:
-    stringr,
-    utils,
-    dplyr
+Author: Thanh Le
+Maintainer: Thanh <thanhmle809@gmail.com>
+Date: 2023-04-07
+BugReports: https://github.com/thanhle809/k-dimensional-DP-MSA/issues
+Depends: R (>= 4.0)
+Imports: stringr, utils, dplyr
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
