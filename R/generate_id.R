@@ -1,4 +1,7 @@
-# generate.id: receive a vector of sequence lengths and return the all possible combinations of score id
+#' @title Generate cells id
+#' @description receive a vector of sequence lengths and return the all possible combinations of score id
+#' @param listofseqlength a vector of sequence lengths
+#' @export
 generate.id <- function(listofseqlength) {
   veclist <- c()
 
