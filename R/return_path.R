@@ -5,16 +5,16 @@
 
 returnPath <- function(dict.pred) {
   dict.pred <- hash.astable(dict.pred) %>%
-    arrange(., desc(keys))
+    arrange(desc(eval(parse(text="keys"))))
 
   # a function that takes in the current cell, look up the predecessor and move the
   # current pointer to the predecessort
   lookup <- function(current) {
-    index <- which(dict.pred$keys == current)
+    index <- which(eval(parse(text="dict.pred$keys == current")))
     return(index)
   }
 
-  current <- dict.pred[1, ]$keys
+  current <- eval(parse(text="dict.pred[1, ]$keys"))
   path <- c(current)
   index <- lookup(current)
 
