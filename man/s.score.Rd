@@ -17,5 +17,5 @@ s.score(scoremat, resvec, gappen)
 sscore
 }
 \description{
-Calculate the sscore of a column in the MSA table
+Return the sscore of a column, based on residue vector and gap penalty
 }
