@@ -1,6 +1,7 @@
 #' @title Returns multiple sequence alignment
 #' @param seqlist list of sequences
 #' @param path list of ids representing a path of backward travel
+#' @export
 
 getMSA <- function(path, seqlist) {
   path <- sort(path, decreasing = F)
