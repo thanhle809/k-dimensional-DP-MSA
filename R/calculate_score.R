@@ -4,6 +4,7 @@
 #' @param predecessoridlist list of the id of the possible predecessors
 #' @param listofseq list of sequence strings
 #' @param scoremat matrix of substitution score
+#' @export
 #' @return a hash table of the predecessor - sscore
 
 calculate.score <- function(current, predecessoridlist, listofseq, scoremat) {
@@ -21,7 +22,6 @@ calculate.score <- function(current, predecessoridlist, listofseq, scoremat) {
   for (i in predecessorlist) {
     # locate the gaps and matches
     gapindex <- which((current - i) == 0)
-    matchindex <- current[-gapindex]
 
     # calculate gap penalty
     gappen <- (-2) * length(gapindex)
@@ -39,7 +39,10 @@ calculate.score <- function(current, predecessoridlist, listofseq, scoremat) {
       }
     }
 
-    sscore <- s.score(scoremat = BLOSUM62, resvec = lettervec, gappen = gappen)
+    load(file = paste0("data/", scoremat, ".rda"))
+
+    sscore <- s.score(scoremat = eval(parse(text = scoremat)),
+                      resvec = lettervec, gappen = gappen)
     scorelist <- c(scorelist, sscore)
   }
 
