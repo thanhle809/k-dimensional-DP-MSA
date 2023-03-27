@@ -1,9 +1,0 @@
-TODO list:
-1. To-read:
-  - how to write a README file
-  - how to organize an R package or a development project
-  - search what other packages is my package reliant on
-2. To-do:
-  - write a function to trace back and create an MSA vizualization using
-  - check how this program differs from other EBI MSA programs (why they are different. where in my program gets it wrong)
-  - calculating the mean score for each column (need to take the mean of the sum from mismatch, match, gappen)
